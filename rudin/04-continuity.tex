@@ -1,8 +1,41 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
 \begin{document}
+\newcommand{\R}{\mathbb{R}}
 
 \setcounter{section}{3}
 \section{Continuity}
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item If $f$ is defined on $E$, the \textit{graph} of $f$ is the set of points
+      $(x, f(x))$ for $x \in E$ or $E \times f(E)$. In particular, if
+      $E \subset \R$ and $f: E \to \R$, then the graph of $f$ is a subset of
+      the plane ($\R^2$)
+
+Suppose $E$ is compact. Prove that $f$ is continuous on $E$ if and only if its
+graph is compact.
+
+\begin{proof}
+Let's first suppose that $f$ is not continuous so there's some $p \in E$ where
+$\lim_{x\to p} f(x) \neq f(p)$.
+
+Let $\{p_n\} \to p$ be some sequence of $E$ so that
+$\{ f(p_n) \} \to y \in \overline{f(E)}$ where $y \neq f(p)$. Then
+$\{ (p_n, f(p_n)) \}$ is an infinite subset of the graph of $f$ which has no
+limit point in the graph. This must mean the graph is not compact.
+
+Now suppose that $f$ is continuous. Since $E$ is compact then $f(E)$ is
+also compact, and it's trivial to show the cartesian product of two compact sets
+is also compact.
+
+\end{proof}
+        
+\end{enumerate}
 
 \end{document}
