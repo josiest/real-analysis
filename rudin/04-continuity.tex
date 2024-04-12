@@ -75,8 +75,7 @@ and prove the following:
 \begin{enumerate}[a.]
 \newcommand{\Boundary}{\frac{1}{2}}
 
-\item \claim $f(x, y) \in [-\Boundary, \Boundary]$
-      for $(x, y) \in \R^2$.
+\item \claim $f(x, y) \in [-\Boundary, \Boundary]$ for $(x, y) \in \R^2$.
 \begin{proof}
 We can equivalently say that $f(x,y) \leq \Boundary$ if $x^2 + y^4 \geq 2xy^2$.
 If we plot the functions on either side of the inequality, we can visualize
@@ -87,8 +86,8 @@ that the inequality is true ($x^2 + y^4$ is pictured here in orange).
 \centering
 \end{figure}
 
-To show this rigorously, let's rearrange the inequality to a quadratic form with
-respect to $y^2$:
+To show this rigorously, let's rearrange the inequality as a quadratic equation
+of $y^2$:
 \begin{equation*}
 \begin{split}
 y^4 - 2xy^2 + x^2 &\geq 0 \\
@@ -98,9 +97,49 @@ y^4 - 2xy^2 + x^2 &\geq 0 \\
 This is clearly true for all $(x, y) \in \R^2$. We can similarly show that
 $f(x, y) \geq -\Boundary$ with the statement $(y^2 + x)^2 \geq 0$. This tells
 us that $f$ is bounded.
-
 \end{proof}
 
+\item \claim $g$ is unbounded on every neighborhood of $(0, 0)$
+\begin{proof}
+Once again, visualization can help us construct our proof. If we graph $g$
+we can see that a ridge folowing the curve $x^2 = y^6$ grows unbounded as $y$
+approaches 0.
+
+\begin{figure}[h]
+\includegraphics[scale=0.1]{figure-04-07-b1}
+\includegraphics[scale=0.1]{figure-04-07-b2}
+\centering
+\end{figure}
+
+To show this rigorously, let's construct an unbounded sequence on the graph of
+$f$ that follows this unbounded ridge.
+
+Define $p_n = (\frac{1}{n^3}, \frac{1}{n})$ so that $f(p_n) = \frac{n}{2}$.
+Let $\epsilon > 0$ be arbitrarily small and let $M > 0$ be arbitrarily large.
+If $n \geq 2M$ then $f(p_n) \geq M$. And by the algebraic limit theorem, there's
+some $N$ where if $n \geq N$ then $\frac{1}{n^6} + \frac{1}{n^2} < \epsilon^2$.
+This shows that $\lvert (\frac{1}{n^3}, \frac{1}{n}) \rvert < \epsilon$. Taking
+$n \geq \max \{ 2M, N \}$ shows that $g$ is unbounded on every neighborhood of
+$(0, 0)$.
+\end{proof}
+
+\item \claim $f$ is not continuous at $(0, 0)$.
+\begin{proof}
+Similar to our previous problem, let's construct two sequences with the same
+limit that follow the curve $x^2 = y^4$, but whose images under $f$ have have
+different limits.
+
+Define $p_n = (\frac{1}{n^2}, \frac{1}{n})$ and
+$q_n = (-\frac{1}{n^2}, \frac{1}{n})$. Clearly both $p_n \to (0, 0)$ and
+$q_n \to (0, 0)$, but $f(p_n) = 1/2$ and $f(q_n) = -1/2$ for all $n$. So clearly
+$f$ is not continuous at $(0, 0)$.
+\end{proof}
+
+\item \claim The restriction of both $f$ and $g$ to any line in $\R^2$ is
+      continuous.
+
+\begin{proof}
+\end{proof}
 \end{enumerate}
         
 \end{enumerate}
