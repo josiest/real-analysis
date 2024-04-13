@@ -139,9 +139,52 @@ $f$ is not continuous at $(0, 0)$.
       continuous.
 
 \begin{proof}
+Let $c, m \in \R$ so that $y = mx + b$ defines an arbitrary line in $\R^2$.
+By the algebraic limit theorem, $f(x, mx + b)$ and $g(x, mx+b)$ are both
+continuous if their denominators are nonzero. So then let's show the
+denominators are always nonzero.
+
+If $b = 0$ then $x^2$ can be factored out of both fractions to get
+\begin{equation*}
+f(x, mx) = \frac{m^2x}{1+m^4x^2}, \qquad g(x, mx) = \frac{m^2x}{1+m^6x^4}
+\end{equation*}
+The even powers in the denominator mean variable term in the denominator must be
+non-negative, and the constant 1 ensures the denominator is nonzero.
+
+A similar argument shows that holding $y$ or $x$ constant gives a nonzero
+denominator:
+
+\begin{equation*}
+\begin{split}
+f(x, b) = \frac{b^2x}{x^2 + b^4}, &\qquad f(b, y) = \frac{by^2}{y^4 + b^2} \\
+g(x, b) = \frac{b^2x}{x^2 + b^6}, &\qquad g(b, y) = \frac{by^2}{y^6 + b^2}
+\end{split}
+\end{equation*}
+
+If $b,m$ are nonzero then consider $h(x) = x^2 + (mx + b)^{2k}$. If $x = -m/b$
+then $h(x) = m^2/b^2$. If $x \neq -m/b$ then $(mx +b)^{2k} > 0$ and so $h(x)$
+is always nonzero.
 \end{proof}
 \end{enumerate}
-        
+
+\item Let $E \subset \R$ be bounded, and let $f: E \to \R$ be uniformly
+      continuous.
+
+\claim $f(E)$ is also bounded.
+\begin{proof}
+If $E$ has no limit points then $E$ must be finite since it's bounded. This must
+also mean $f(E)$ is bounded. Now suppose $E$ at least one limit point.
+
+Let $p$ be any limit point of $E$ and suppose for contradiction that $f(x)$
+grows unbounded as $x \to p$. Let $\delta > 0$ and choose some $q \in E$ where
+$| p - q | < \delta$. Put $M = |f(q)|$.
+
+Since $f(x)$ is unbounded as $x \to P$, there must be some $s \in E$ where
+$| p - s | < \delta$ and $|f(s)| \geq M + 1$. Then $| p - q | < \delta$, but
+$| f(p) - f(q) | \geq 1/2$, which contradicts that $f$ is uniformly continuous.
+\end{proof}
+
+Taking $f(x) = x$ shows that $f$ need not be bounded if $E$ is unbounded.
 \end{enumerate}
 
 \end{document}

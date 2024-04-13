@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\usepackage{enumerate}
+
+\begin{document}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\claim}{\par\noindent\textit{Claim:}\space}
+
+\setcounter{section}{2}
+\section{Numerical Sequences and Series}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+\item \claim The Cuachy product of two absolutely convergent series is also
+      absolutely convergent.
+
+\begin{proof}
+Let $\sum a_n, \sum b_n$ be two absolutely convergent series. Put
+$A = \sum |a_n|$ and $B = \sum |b_n|$. Then their cauchy product
+$\sum_{n=0}^{\infty} \sum_{k=0}^n |a_n b_n|$ converges to $AB$. Then by the
+triangle inequality
+\begin{equation*}
+\sum_{n=0}^{\infty} \sum_{k=0}^n | a_n b_n | \geq
+\sum_{n=0}^{\infty} | \sum_{k=0}^n a_n b_n |
+\end{equation*}
+
+Which means that the Cauchy product of two convergent series must converge by
+comparison.
+\end{proof} \end{enumerate}
+
+\end{document}
