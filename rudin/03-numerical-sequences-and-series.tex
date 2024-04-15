@@ -98,6 +98,35 @@ x_{n+1} = \frac{1}{2}\left(x_n + \frac{\alpha}{x_n}\right)
 This contradicts that $x = \inf\{x_n\}$, so it must be the case that
 $x = \sqrt{\alpha}$ exactly.
 \end{proof}
+
+\item Put $\varepsilon_n = x_n - \sqrt{\alpha}$
+\claim \begin{equation*}
+\varepsilon_{n+1} = \frac{\varepsilon_n^2}{2x_n}
+                  < \frac{\varepsilon_n^2}{2\sqrt{\alpha}}
+\end{equation*}
+\begin{proof}
+\begin{equation*}
+\begin{split}
+\varepsilon_{n+1} &= x_{n+1} - \sqrt{\alpha} \\
+                  &= \frac{1}{2}\left(x_n + \frac{\alpha}{x_n}\right)
+                   - \sqrt{\alpha} \\
+                  &= \frac{x_n^2 - 2\sqrt{\alpha}x_n + \alpha}{2x_n} \\
+                  &= \frac{(x_n-\sqrt{\alpha})^2}{2x_n}
+                   = \frac{\varepsilon_n^2}{2x_n}
+\end{split}
+\end{equation*}
+We showed earlier that $x_n$ is bounded below by $\sqrt{\alpha}$, so it follows
+that
+\begin{equation*}
+\frac{\varepsilon_n^2}{2x_n} < \frac{\varepsilon_n^2}{2\sqrt{\alpha}}
+\end{equation*}
+A basic inductive argument shows that
+\begin{equation*}
+\varepsilon_{n+1} < 2\sqrt{\alpha}\left(
+                        \frac{\varepsilon_1}{2\sqrt{\alpha}}
+                    \right)^{2^n}
+\end{equation*}
+\end{proof}
 \end{enumerate}
 \end{enumerate}
 \end{document}
