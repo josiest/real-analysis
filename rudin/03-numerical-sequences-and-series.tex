@@ -28,11 +28,76 @@ $\sum_{n=0}^{\infty} \sum_{k=0}^n |a_n b_n|$ converges to $AB$. Then by the
 triangle inequality
 \begin{equation*}
 \sum_{n=0}^{\infty} \sum_{k=0}^n | a_n b_n | \geq
-\sum_{n=0}^{\infty} | \sum_{k=0}^n a_n b_n |
+\sum_{n=0}^{\infty} \left| \sum_{k=0}^n a_n b_n \right|
 \end{equation*}
 
 Which means that the Cauchy product of two convergent series must converge by
 comparison.
-\end{proof} \end{enumerate}
+\end{proof}
 
+\setcounter{enumi}{15}
+\item Fix $\alpha > 0$ and choose $x_1 > \sqrt{\alpha}$. Define
+\begin{equation*}
+x_{n+1} = \frac{1}{2} \left(x_n + \frac{\alpha}{x_n}\right)
+\end{equation*}
+\begin{enumerate}[a.]
+\item Prove that $x_n$ is monotonically decreasing and that
+      $\lim x_n = \sqrt{\alpha}$.
+
+\claim $x_n^2 > \alpha$
+\begin{proof}
+This is true for $x_1$ by its definition, so let $n \geq 2$ and suppose
+$x_n > \sqrt{\alpha}$.
+
+\begin{equation*}
+\begin{split}
+(x_n - \sqrt{\alpha})^2 &> 0 \\
+x_n^2 + \alpha &> 2\sqrt{\alpha} x_n \\
+\frac{1}{2}\left(x_n + \frac{\alpha}{x_n}\right) &> \sqrt{\alpha} \\
+x_{n+1} &> \sqrt{\alpha}
+\end{split}
+\end{equation*}
+\end{proof}
+
+\claim $x_n$ is monotonically decreasing.
+\begin{proof}
+Let $n \geq 1$.
+\begin{equation*}
+\begin{split}
+ x_n^2 &> \alpha \\
+2x_n^2 &> x_n^2 + \alpha \\
+   x_n &> \frac{1}{2} \left(x_n + \frac{\alpha}{x_n}\right) \\
+   x_n &> x_{n+1}
+\end{split}
+\end{equation*}
+\end{proof}
+
+\claim $x_n \to \sqrt{\alpha}$
+\begin{proof}
+$x_n$ is monotonically decreasing and bounded below by $\sqrt{\alpha}$, so it
+must converge to some $x \in \R \geq \sqrt{\alpha}$. Suppose for contradiction
+that $x > \sqrt{\alpha}$, and put $\varepsilon = \frac{\sqrt{x^2 - \alpha}}{2}$.
+There must be some $N$ where if $n\geq N$ then $x < x_n < x+\varepsilon$. So
+then we have
+
+\begin{equation*}
+\begin{split}
+\varepsilon &< \sqrt{x^2 - \alpha} \\
+\varepsilon^2 + \alpha &< x^2 \\
+\varepsilon(x + \varepsilon) + \alpha &< x(x+\varepsilon) \\
+x + \varepsilon + \frac{\alpha}{x+\varepsilon} &< 2x \\
+\frac{1}{2}\left(x + \varepsilon + \frac{\alpha}{x+\varepsilon}\right) &< x
+\end{split}
+\end{equation*}
+And since $x_n < x + \varepsilon$ it must also be the case that
+\begin{equation*}
+x_{n+1} = \frac{1}{2}\left(x_n + \frac{\alpha}{x_n}\right)
+        < \frac{1}{2}\left(x+\varepsilon + \frac{\alpha}{x+\varepsilon}\right)
+        < x
+\end{equation*}
+This contradicts that $x = \inf\{x_n\}$, so it must be the case that
+$x = \sqrt{\alpha}$ exactly.
+\end{proof}
+\end{enumerate}
+\end{enumerate}
 \end{document}
